@@ -1,5 +1,7 @@
 //vendors
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 //styled components
 import {
@@ -15,6 +17,9 @@ import {
 import GraphThumbs from '../graph-thumbs/graph-thumbs';
 import ThumbsComponent from '../thumbs-component/thumbs-component';
 
+//actions
+import { setThumbsCalification } from '../../actions/persons.actions';
+
 //utils
 import { getTranslation } from '../../utils/translationsUtils';
 
@@ -23,12 +28,20 @@ import {
   THUMBS_V1,
   THUMBS_V2,
 } from '../../constants/thumbs-component.constants.json';
-import { ThumbsContainer } from '../graph-thumbs/graph-thumbs.styled';
 
-export default class Card extends Component {
+export class Card extends Component {
+  handleClickThumbs = (isPositive) => {
+    const {
+      setThumbsCalification,
+      person: { id },
+    } = this.props;
+
+    setThumbsCalification({ personId: id, isPositive });
+  };
+
   render() {
     const {
-      person: { id, thumbsDown, thumbsUp, name, description, reference, image },
+      person: { thumbsDown, thumbsUp, name, description, reference, image },
       isPrincipal,
     } = this.props;
     const titleName = `${name}${isPrincipal ? '?' : ''}`;
@@ -51,7 +64,10 @@ export default class Card extends Component {
             )}
           </StyledCard>
           <div className="mt-3">
-            <ThumbsComponent thumbsType={isPrincipal ? THUMBS_V1 : THUMBS_V2} />
+            <ThumbsComponent
+              thumbsType={isPrincipal ? THUMBS_V1 : THUMBS_V2}
+              onClickThumbs={this.handleClickThumbs}
+            />
           </div>
         </StyledInformationContainer>
         {!isPrincipal && (
@@ -61,3 +77,5 @@ export default class Card extends Component {
     );
   }
 }
+
+export default Card;

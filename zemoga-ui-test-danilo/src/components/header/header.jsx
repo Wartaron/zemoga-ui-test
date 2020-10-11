@@ -6,12 +6,7 @@ import { Link } from 'react-router-dom';
 import { getTranslation } from '../../utils/translationsUtils';
 
 //styled components
-import {
-  TitleHeader,
-  RightNav,
-  StyledLink,
-  StyledHeader,
-} from './header.styled';
+import { TitleHeader, RightNav, StyledHeader } from './header.styled';
 
 class Header extends Component {
   render() {
@@ -24,23 +19,27 @@ class Header extends Component {
           <TitleHeader id="mainmenulabel">
             {getTranslation('title')}
           </TitleHeader>
-          <Link to="#" className="navbar-brand text-white" aria-current="page">
+          <Link to="/" className="navbar-brand text-white" aria-current="page">
             {getTranslation('title')}
           </Link>
           <RightNav
             className="navbar-nav mr-2 mt-2 mt-lg-0"
             aria-labelledby="secondarymenulabel"
           >
-            <Link to="#" className="pl-2 text-white" aria-current="page">
+            <Link to="/trials" className="pl-2 text-white" aria-current="page">
               {getTranslation('header', 'menuOption1')}
             </Link>
-            <Link to="#" className="pl-2 text-white" aria-current="page">
+            <Link
+              to="/how-it-works"
+              className="pl-2 text-white"
+              aria-current="page"
+            >
               {getTranslation('header', 'menuOption2')}
             </Link>
-            <Link to="#" className="pl-2 text-white" aria-current="page">
+            <Link to="/log" className="pl-2 text-white" aria-current="page">
               {getTranslation('header', 'menuOption3')}
             </Link>
-            <Link to="#" className="pl-2 text-white" aria-current="page">
+            <Link to="/search" className="pl-2 text-white" aria-current="page">
               {getTranslation('header', 'menuOption4')}
             </Link>
           </RightNav>

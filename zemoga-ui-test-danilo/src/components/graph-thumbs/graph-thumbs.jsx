@@ -6,8 +6,8 @@ export class GraphThumbs extends Component {
     const { thumbsDown, thumbsUp } = this.props;
 
     const total = thumbsDown + thumbsUp;
-    const percentageDown = (thumbsDown / total) * 100;
-    const percentageUp = (thumbsUp / total) * 100;
+    const percentageDown = Math.ceil((thumbsDown / total) * 100);
+    const percentageUp = Math.floor((thumbsUp / total) * 100);
 
     return {
       percentageDown,
@@ -16,13 +16,16 @@ export class GraphThumbs extends Component {
   };
 
   render() {
-    const { thumbsUp, thumbsDown } = this.props;
     const { percentageDown, percentageUp } = this.calculatePercentage();
 
     return (
       <ThumbsContainer>
-        <ThumbsUp width={percentageUp}>👍</ThumbsUp>
-        <ThumbsDown width={percentageDown}>👎</ThumbsDown>
+        {!!percentageUp && (
+          <ThumbsUp width={percentageUp}>👍 {percentageUp}%</ThumbsUp>
+        )}
+        {!!percentageDown && (
+          <ThumbsDown width={percentageDown}>👎 {percentageDown}%</ThumbsDown>
+        )}
       </ThumbsContainer>
     );
   }

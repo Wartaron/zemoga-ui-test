@@ -3,11 +3,10 @@ import {
   GET_PERSONS_DATA_REQUEST,
   GET_PERSONS_DATA_ERROR,
   RESET_PERSONS_DATA,
+  SET_CALIFICATION,
 } from '../constants/actions.constants.json';
 
 import { getPrincipalPerson } from '../utils/personsUtils';
-
-const namespace = 'personsData';
 
 const initialState = {
   success: false,
@@ -39,6 +38,21 @@ const personsReducer = (state = initialState, action) => {
       nextState.success = true;
       nextState.data = action.payload.data.slice(1);
       nextState.principalPerson = getPrincipalPerson(action.payload.data);
+      break;
+
+    case SET_CALIFICATION:
+      const { personId, isPositive } = action.payload;
+
+      nextState.data = nextState.data.map((person) => {
+        if (person.id === personId) {
+          isPositive
+            ? (person.thumbsUp = person.thumbsUp + 1)
+            : (person.thumbsDown = person.thumbsDown + 1);
+        }
+
+        return person;
+      });
+
       break;
 
     case RESET_PERSONS_DATA:

@@ -9,3 +9,7 @@ export const getPrincipalPerson = (persons) => {
 
   return person;
 };
+
+export const getPersonById = (persons, personId) => {
+  return persons.find((person) => person.id === personId);
+};

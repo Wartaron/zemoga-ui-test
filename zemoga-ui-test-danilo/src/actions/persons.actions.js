@@ -5,6 +5,7 @@ import {
   GET_PERSONS_DATA_REQUEST,
   GET_PERSONS_DATA_ERROR,
   RESET_PERSONS_DATA,
+  SET_CALIFICATION,
 } from '../constants/actions.constants.json';
 
 export const getPersonsCall = () => {
@@ -28,6 +29,11 @@ export const resetPersons = () => ({
 export const getPersonsSucess = (data) => ({
   type: GET_PERSONS_DATA_SUCCESS,
   payload: data,
+});
+
+export const setThumbsCalification = ({ personId, isPositive }) => ({
+  type: SET_CALIFICATION,
+  payload: { personId, isPositive },
 });
 
 export const getPersons = () => (dispatch) => {

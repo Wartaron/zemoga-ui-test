@@ -14,7 +14,7 @@ class SecondaryContent extends Component {
   }
 
   render() {
-    const { persons } = this.props;
+    const { persons, setThumbsCalification } = this.props;
     const { isMessageOpen } = this.state;
 
     return (
@@ -28,7 +28,10 @@ class SecondaryContent extends Component {
             }}
           />
         )}
-        <Cards persons={persons} />
+        <Cards
+          persons={persons}
+          setThumbsCalification={setThumbsCalification}
+        />
       </SecondaryContentContainer>
     );
   }

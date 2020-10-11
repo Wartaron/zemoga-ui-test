@@ -26,6 +26,7 @@ export const StyledContainer = styled.div`
 
 export const StyledInformationContainer = styled.div`
   padding: 30px;
+  padding-bottom: 50px;
   background: rgb(0, 0, 0);
   background: linear-gradient(
     180deg,

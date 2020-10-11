@@ -6,7 +6,7 @@ export const AppContainer = styled.div`
   background-image: url('${backgroundImage}');
   background-position: top;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   padding: 0 200px;
 `;
 
