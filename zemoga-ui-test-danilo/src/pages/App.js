@@ -4,7 +4,7 @@ import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
 
 //styles
-import { AppContainer, SectionContent } from './App.styled';
+import { AppContainer } from './App.styled';
 
 //Components
 import Header from '../components/header/header';
