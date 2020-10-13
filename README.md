@@ -5,12 +5,12 @@ UI test presented to Zemoga.
 Here you're gonna find an implementation with React. 
 The project have the following
 
--[React](https://reactjs.org/): Implementation and user interaction
--[Redux](https://es.redux.js.org/): To persist the data while the application is running
--[Styled Components](https://www.styled-components.com/): It's a library to wrote scss with Jsx Elements, is very useful because you don't have to worry about classnames, well ... just in some cases
--[Ramda](https://ramdajs.com/): Utilities to make the developer life a little more easier.
--[Axios](https://github.com/axios/axios): Used fo a consulting JSON in this [repo](https://github.com/Wartaron/json-server-data) using a [site](http://my-json-server.typicode.com/) that allow to make mock data calls.
--[Jest](https://jestjs.io/): To test library, but is not fully implemented, it's seems to only work with `yarn` and try to use it with `npm` but i have to do many configurations and I was short of time 😅
+- [React](https://reactjs.org/): Implementation and user interaction
+- [Redux](https://es.redux.js.org/): To persist the data while the application is running
+- [Styled Components](https://www.styled-components.com/): It's a library to wrote scss with Jsx Elements, is very useful because you don't have to worry about classnames, well ... just in some cases
+- [Ramda](https://ramdajs.com/): Utilities to make the developer life a little more easier.
+- [Axios](https://github.com/axios/axios): Used fo a consulting JSON in this [repo](https://github.com/Wartaron/json-server-data) using a [site](http://my-json-server.typicode.com/) that allow to make mock data calls.
+- [Jest](https://jestjs.io/): To test library, but is not fully implemented, it's seems to only work with `yarn` and try to use it with `npm` but i have to do many configurations and I was short of time 😅
 
 
 # Run the App
